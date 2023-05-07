@@ -70,7 +70,7 @@ const CreatePostWizard = () => {
 const Feed = () => {
   const { data, isLoading: postsLoading } = api.posts.getAll.useQuery();
 
-  if (postsLoading) return <LoadingPage />;
+  if (postsLoading) return <LoadingPage />
 
   if (!data) return <div>Something went wrong</div>;
 
@@ -84,12 +84,12 @@ const Feed = () => {
 };
 
 const Home: NextPage = () => {
-  const { isLoaded: userLoaded, isSignedIn } = useUser();
+  const { isLoaded: userLoaded, isSignedIn } = useUser()
 
   api.posts.getAll.useQuery();
 
   //Return empty div if BOTH aren't loaded
-  if (!userLoaded) return <div />;
+  if (!userLoaded) return <div />
 
   return (
     <PageLayout>
